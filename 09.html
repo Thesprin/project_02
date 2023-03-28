@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增表单事件</title>
+</head>
+<body>
+    <form action="">
+        用户名: <input type="text" name="userName" id="userName"><br>
+        电话:  <input type="tel" name="userPhone" id="userPhone" pattern="^1\d{10}$"><br>
+        <input type="submit"><br>
+    </form>
+    <script>
+        document.getElementById("userName").oninput=function(){
+            console.log("oninput:"+this.value);
+        }
+        document.getElementById("userName").onkeyup=function(){
+            console.log("onkeyup:"+this.value);
+        }
+        document.getElementById("userPhone").oninvalid=function(){
+            /* oninvalid：当验证不通过时触发 */
+        /* this.setCustomValidity("请输入合法的11位手机号"); */  
+        console.log(请输入合法的11位手机号);
+    }
+    </script>
+</body>
+</html> 

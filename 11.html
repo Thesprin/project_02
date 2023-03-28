@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单总结案例</title>
+    <link rel="stylesheet" href="../css/formCss.css">
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>学生档案</legend>
+            <label for="userName">姓名:</label>
+            <input type="text" name="userName" id="userName"
+             placeholder="请输入用户名">
+             <label for="userPhone">手机号码:</label>
+            <input type="tel" name="userPhone" id="userPhone" pattern="^1\{10}$">
+            <label for="userMail">邮箱地址：</label>
+            <input type="email" name="userMail" id="userMail" required
+             placeholder="请输入邮箱">   
+            <label for="userCollege">所属学院:</label>
+            <input type="text" name="userCollege" id="userCollege" list="10" >
+            <datalist id="10">
+<option value="智能制造学院"></option>
+<option value="电气及自动化学院"></option>
+<option value="计算机学院"></option>
+<option value="护理学院"></option>
+<option value="教育学院"></option>
+<option value="体育学院"></option>
+<option value="航空学院"></option>
+            </datalist>
+            <label for="score">入学成绩：</label>
+            <input type="number" name="score" id="score" max="100" min="0" value="60">
+            <label for="">基础水平</label>
+            <meter max="100" min="0" high="90" low="60" id="20"></meter>
+            <label for="enrollment">入学日期：</label>
+            <input type="date" name="enrollment" id="enrollment">
+            <label for="graduation">毕业日期：</label>
+            <input type="date" name="graduation" id="graduation">
+            <input type="submit">
+         </fieldset>
+    </form>
+    <script>
+        document.getElementById("score").oninput=function(){
+            document.getElementById("20"). value=this.value    
+        }
+    </script>
+</body>
+</html>
